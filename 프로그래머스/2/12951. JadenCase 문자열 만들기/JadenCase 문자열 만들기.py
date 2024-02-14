@@ -5,5 +5,5 @@ def solution(s):
         answer[x]=i.capitalize()
     for i in answer:
         new+=i+' '
-                
+    # print(new)            
     return new[:-1]
