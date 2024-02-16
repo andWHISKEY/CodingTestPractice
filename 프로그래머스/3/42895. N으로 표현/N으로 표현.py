@@ -3,7 +3,7 @@ def solution(N, number):
     if N == number :
         return 1
     
-    # 1. [SET*8] 초기화
+    # 1. [SET]*8 초기화
     s=[set() for x in range(8)]
     
     # 2. 각 set마다 기본 수 "N"*i 수 초기화
