@@ -1,7 +1,9 @@
 from heapq import heappush, heappop, heapify 
 
 def solution(scoville, K):
+    # print(scoville)
     heapify(scoville)
+    # print(scoville)
     answer = 0
     while(scoville[0]<K):
         if len(scoville)==1:
