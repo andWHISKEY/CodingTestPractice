@@ -24,7 +24,7 @@ def solution(n, edge):
     for x,y in edge:
         graph[x].append(y)
         graph[y].append(x)
-    
+    # print(graph)
     return bfs(graph,1,visited)
     
     
