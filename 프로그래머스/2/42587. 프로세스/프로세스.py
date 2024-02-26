@@ -16,8 +16,8 @@ def solution(priorities, location):
                 locarr.append(outloc)
                 flag=1
                 break
-        if flag==0:        
-            answer.append(out)
-            # print(priorities,answer)
+        if flag==0:
             answerloc.append(outloc)
+            # answer.append(out)
+            # print(priorities,answer)
     return answerloc.index(1)+1
