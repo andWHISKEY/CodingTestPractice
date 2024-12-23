@@ -1,64 +1,24 @@
-import math
-
 def solution(progresses, speeds):
-    timetable=[]
-    answer=[]
-    for x,y in zip(progresses,speeds):
-        timetable.append(math.ceil((100-x)/y))
-    print(timetable)  
-    cnt=1
-    answer_num=timetable[0]
-    for i in timetable[1:]:
-        if i>answer_num:
+    length= len(progresses)
+    task=[]
+    for i in range(length):
+        d=(100-progresses[i])//speeds[i]
+        r=(100-progresses[i])%speeds[i]
+        if r>0:
+            d=d+1
+        task.append(d)
+    # print(task)    
+    answer = []
+    max_num=task[0]
+    cnt=0
+    for i in task:
+        # print('m,c,i:',max_num,cnt,i)
+        if max_num<i:
             answer.append(cnt)
-            answer_num=i
+            max_num=i
             cnt=1
         else:
             cnt+=1
-    answer.append(cnt)        
-    return answer       
-            
-    
-
-
-
-
-
-
-
-
-
-
-# def solution(progresses, speeds):
-#     Q=[]
-#     for p, s in zip(progresses, speeds):
-#         if len(Q)==0 or Q[-1][0]<-((p-100)//s):
-#             print(Q)
-#             Q.append([-((p-100)//s),1])
-#         else:
-#             print(Q)
-#             Q[-1][1]+=1
-#     return [q[1] for q in Q]
-
-# def solution(progresses, speeds):
-#     answer = []
-#     temp=[]
-#     temp2=0
-#     for idx,i in enumerate(progresses):
-#         temp.append(math.ceil((100-progresses[idx])/speeds[idx]))
-    
-#     for idx,i in enumerate(temp):
-#         if idx==0:
-#             temp2=i
-#             cnt=1
-#         else:
-#             if i<=temp2:
-#                 cnt+=1
-#             else:
-#                 answer.append(cnt)
-#                 cnt=1
-#                 temp2=i
-    
-#     answer.append(cnt)
-    
-#     return answer
+        
+    answer.append(cnt)
+    return answer
